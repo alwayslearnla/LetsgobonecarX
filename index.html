@@ -20,285 +20,86 @@
     --border:     #F0C8E8;
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
-  body{
-    background:var(--pink-light);
-    color:var(--text);
-    font-family:'Nunito', sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
+  body{ background:var(--pink-light); color:var(--text); font-family:'Nunito',sans-serif; -webkit-font-smoothing:antialiased; }
 
-  /* topo decorativo */
-  .faixa-topo{
-    background:var(--pink);
-    padding:8px 16px;
-    text-align:center;
-    font-size:13px;
-    color:#fff;
-    font-weight:600;
-    letter-spacing:.04em;
-  }
+  .faixa-topo{ background:var(--pink); padding:8px 16px; text-align:center; font-size:13px; color:#fff; font-weight:600; letter-spacing:.04em; }
 
-  /* header */
-  header{
-    background:var(--white);
-    border-bottom:3px solid var(--pink-mid);
-    padding:32px 20px 28px;
-    text-align:center;
-  }
-  .logo-nome{
-    font-family:'Pacifico', cursive;
-    font-size:clamp(2rem, 6vw, 3.2rem);
-    color:var(--pink);
-    line-height:1.1;
-    margin-bottom:20px;
-  }
-  .logo-sub{
-    font-size:13px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    color:var(--text-soft);
-    font-weight:700;
-    margin-bottom:16px;
-  }
-  header p.descricao{
-    color:var(--text-soft);
-    font-size:15px;
-    line-height:1.6;
-    max-width:480px;
-    margin:0 auto 22px;
-  }
+  header{ background:var(--white); border-bottom:3px solid var(--pink-mid); padding:32px 20px 28px; text-align:center; }
+  .logo-nome{ font-family:'Pacifico',cursive; font-size:clamp(2rem,6vw,3.2rem); color:var(--pink); line-height:1.1; margin-bottom:20px; }
+  .logo-sub{ font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-soft); font-weight:700; margin-bottom:16px; }
+  header p.descricao{ color:var(--text-soft); font-size:15px; line-height:1.6; max-width:480px; margin:0 auto 22px; }
 
-  .contatos{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-  }
-  .btn-contato{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:11px 22px;
-    border-radius:30px;
-    font-size:14px;
-    font-weight:700;
-    text-decoration:none;
-    font-family:'Nunito',sans-serif;
-    transition:transform .15s, box-shadow .15s;
-  }
+  .contatos{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+  .btn-contato{ display:inline-flex; align-items:center; gap:8px; padding:11px 22px; border-radius:30px; font-size:14px; font-weight:700; text-decoration:none; font-family:'Nunito',sans-serif; transition:transform .15s, box-shadow .15s; }
   .btn-contato:hover{ transform:translateY(-2px); box-shadow:0 6px 18px rgba(232,24,154,.25); }
   .btn-contato.whats{ background:#25D366; color:#fff; }
   .btn-contato.insta{ background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; }
 
-  /* corações decorativos */
-  .coracao-faixa{
-    text-align:center;
-    font-size:18px;
-    letter-spacing:10px;
-    color:var(--pink);
-    opacity:.35;
-    padding:14px 0 2px;
-  }
+  .coracao-faixa{ text-align:center; font-size:18px; letter-spacing:10px; color:var(--pink); opacity:.35; padding:14px 0 2px; }
 
-  /* abas */
-  .abas{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin:28px auto 6px;
-    max-width:700px;
-    padding:0 20px;
-  }
-  .aba{
-    flex:1; max-width:240px;
-    padding:13px 10px;
-    text-align:center;
-    background:var(--white);
-    border:2px solid var(--border);
-    border-radius:30px;
-    font-family:'Nunito',sans-serif;
-    font-size:14.5px;
-    font-weight:700;
-    color:var(--text-soft);
-    cursor:pointer;
-    transition:all .15s;
-  }
-  .aba.ativa{
-    background:var(--pink);
-    color:#fff;
-    border-color:var(--pink);
-    box-shadow:0 4px 14px rgba(232,24,154,.3);
-  }
+  /* abas status */
+  .abas{ display:flex; justify-content:center; gap:10px; margin:28px auto 0; max-width:700px; padding:0 20px; }
+  .aba{ flex:1; max-width:240px; padding:13px 10px; text-align:center; background:var(--white); border:2px solid var(--border); border-radius:30px; font-family:'Nunito',sans-serif; font-size:14.5px; font-weight:700; color:var(--text-soft); cursor:pointer; transition:all .15s; }
+  .aba.ativa{ background:var(--pink); color:#fff; border-color:var(--pink); box-shadow:0 4px 14px rgba(232,24,154,.3); }
 
-  /* filtro */
-  #filtros{
-    display:flex;
-    justify-content:center;
-    margin:18px auto 0;
-    padding:0 20px;
-    max-width:500px;
-  }
-  #filtros input{
-    width:100%;
-    padding:11px 20px;
-    border:2px solid var(--border);
-    border-radius:30px;
-    font-size:14px;
-    font-family:'Nunito',sans-serif;
-    background:var(--white);
-    color:var(--text);
-  }
+  /* filtros de categoria */
+  .categorias-wrap{ max-width:900px; margin:16px auto 0; padding:0 20px; }
+  .categorias-label{ font-size:12.5px; font-weight:700; color:var(--text-soft); letter-spacing:.08em; text-transform:uppercase; margin-bottom:10px; }
+  .categorias{ display:flex; flex-wrap:wrap; gap:8px; }
+  .cat-btn{ padding:8px 18px; border-radius:30px; border:2px solid var(--border); background:var(--white); font-family:'Nunito',sans-serif; font-size:13.5px; font-weight:700; color:var(--text-soft); cursor:pointer; transition:all .15s; white-space:nowrap; }
+  .cat-btn:hover{ border-color:var(--pink); color:var(--pink); }
+  .cat-btn.ativa{ background:var(--pink-mid); border-color:var(--pink); color:var(--pink-dark); }
+
+  /* busca */
+  #filtros{ display:flex; justify-content:center; margin:14px auto 0; padding:0 20px; max-width:500px; }
+  #filtros input{ width:100%; padding:11px 20px; border:2px solid var(--border); border-radius:30px; font-size:14px; font-family:'Nunito',sans-serif; background:var(--white); color:var(--text); }
   #filtros input:focus{ outline:none; border-color:var(--pink); }
 
-  /* catálogo */
-  #catalogo{
-    max-width:1160px;
-    margin:36px auto 80px;
-    padding:0 20px;
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(240px,1fr));
-    gap:24px;
-  }
+  /* resultado count */
+  .resultado-count{ text-align:center; font-size:13px; color:var(--text-soft); margin:14px 0 0; font-weight:600; }
 
-  .card{
-    background:var(--white);
-    border-radius:16px;
-    overflow:hidden;
-    border:2px solid var(--pink-mid);
-    transition:transform .2s, box-shadow .2s;
-    position:relative;
-  }
+  /* catálogo */
+  #catalogo{ max-width:1160px; margin:28px auto 80px; padding:0 20px; display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:24px; }
+
+  .card{ background:var(--white); border-radius:16px; overflow:hidden; border:2px solid var(--pink-mid); transition:transform .2s, box-shadow .2s; position:relative; }
   .card:hover{ transform:translateY(-5px); box-shadow:0 14px 30px rgba(232,24,154,.15); }
 
-  .foto-wrap{
-    position:relative;
-    aspect-ratio:4/5;
-    background:var(--pink-mid);
-    overflow:hidden;
-  }
-  .foto-wrap img{
-    width:100%; height:100%;
-    object-fit:cover;
-    display:block;
-    transition:transform .3s;
-  }
+  .foto-wrap{ position:relative; aspect-ratio:4/5; background:var(--pink-mid); overflow:hidden; }
+  .foto-wrap img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s; }
   .card:hover .foto-wrap img{ transform:scale(1.04); }
 
-  .miniaturas{
-    display:flex;
-    gap:6px;
-    padding:8px 10px;
-    background:var(--pink-light);
-    border-top:1px solid var(--pink-mid);
-  }
-  .miniaturas img{
-    width:40px; height:40px;
-    object-fit:cover;
-    border-radius:8px;
-    cursor:pointer;
-    border:2px solid transparent;
-    opacity:.7;
-  }
+  .miniaturas{ display:flex; gap:6px; padding:8px 10px; background:var(--pink-light); border-top:1px solid var(--pink-mid); }
+  .miniaturas img{ width:40px; height:40px; object-fit:cover; border-radius:8px; cursor:pointer; border:2px solid transparent; opacity:.7; }
   .miniaturas img.ativa{ opacity:1; border-color:var(--pink); }
 
-  .selo-status{
-    position:absolute;
-    top:12px; left:12px;
-    font-size:11.5px;
-    font-weight:700;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    padding:5px 13px;
-    border-radius:30px;
-    background:var(--pink);
-    color:#fff;
-    font-family:'Nunito',sans-serif;
-  }
-  .selo-status.adotada{
-    background:rgba(255,255,255,.9);
-    color:var(--pink);
-    border:1px solid var(--pink);
-  }
+  .selo-status{ position:absolute; top:12px; left:12px; font-size:11.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:5px 13px; border-radius:30px; background:var(--pink); color:#fff; font-family:'Nunito',sans-serif; }
+  .selo-status.adotada{ background:rgba(255,255,255,.9); color:var(--pink); border:1px solid var(--pink); }
+
+  .selo-cat{ position:absolute; top:12px; right:12px; font-size:11px; font-weight:700; padding:4px 10px; border-radius:30px; background:rgba(255,255,255,.88); color:var(--pink-dark); border:1px solid var(--border); }
 
   .card-info{ padding:14px 16px 16px; }
-  .card-info h3{
-    font-size:16.5px;
-    font-weight:700;
-    margin-bottom:5px;
-    color:var(--text);
-  }
-  .card-info p.desc{
-    font-size:13.5px;
-    color:var(--text-soft);
-    line-height:1.5;
-    margin-bottom:12px;
-  }
+  .card-info h3{ font-size:16.5px; font-weight:700; margin-bottom:5px; color:var(--text); }
+  .card-info p.desc{ font-size:13.5px; color:var(--text-soft); line-height:1.5; margin-bottom:12px; }
 
-  .card-rodape{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-  }
-  .preco{
-    font-size:19px;
-    font-weight:700;
-    color:var(--pink);
-    font-family:'Nunito',sans-serif;
-  }
-  .btn-quero{
-    background:var(--pink);
-    color:#fff;
-    border:none;
-    padding:9px 18px;
-    border-radius:30px;
-    font-size:13.5px;
-    font-weight:700;
-    cursor:pointer;
-    text-decoration:none;
-    font-family:'Nunito',sans-serif;
-    white-space:nowrap;
-    transition:background .15s;
-  }
+  .card-rodape{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .preco{ font-size:19px; font-weight:700; color:var(--pink); }
+  .btn-quero{ background:var(--pink); color:#fff; border:none; padding:9px 18px; border-radius:30px; font-size:13.5px; font-weight:700; cursor:pointer; text-decoration:none; font-family:'Nunito',sans-serif; white-space:nowrap; transition:background .15s; }
   .btn-quero:hover{ background:var(--pink-dark); }
+  .frase-adotada{ font-size:13.5px; color:var(--pink); font-style:italic; font-weight:600; }
 
-  .frase-adotada{
-    font-size:13.5px;
-    color:var(--pink);
-    font-style:italic;
-    font-weight:600;
-  }
-
-  #loading,#vazio{
-    text-align:center;
-    color:var(--text-soft);
-    margin:60px 0;
-    font-size:17px;
-    font-weight:600;
-  }
+  #loading,#vazio{ text-align:center; color:var(--text-soft); margin:60px 0; font-size:17px; font-weight:600; }
   #erro{ text-align:center; color:#c0392b; margin:24px; display:none; }
 
-  footer{
-    background:var(--white);
-    border-top:3px solid var(--pink-mid);
-    text-align:center;
-    padding:28px 20px 40px;
-    color:var(--text-soft);
-    font-size:13px;
-  }
+  footer{ background:var(--white); border-top:3px solid var(--pink-mid); text-align:center; padding:28px 20px 40px; color:var(--text-soft); font-size:13px; }
   footer strong{ color:var(--pink); font-size:15px; }
-  footer a{
-    color:var(--text-soft);
-    text-decoration:underline;
-    font-size:13px;
-    display:inline-block;
-    margin-top:10px;
-  }
+  footer a{ color:var(--text-soft); text-decoration:underline; font-size:13px; display:inline-block; margin-top:10px; }
 
-  @media(max-width:480px){
+  @media(max-width:520px){
     .abas{ padding:0 12px; }
+    .categorias-wrap{ padding:0 12px; }
     #filtros{ padding:0 12px; }
     #catalogo{ padding:0 12px; gap:16px; }
+    .cat-btn{ font-size:12.5px; padding:7px 14px; }
   }
 </style>
 </head>
@@ -311,12 +112,8 @@
   <div class="logo-sub">Bonecas de Pano Artesanais</div>
   <p class="descricao">Cada boneca é costurada à mão com muito amor — tecidos, roupinhas e detalhes escolhidos um a um. Veja quem ainda está esperando por uma família! 🩷</p>
   <div class="contatos">
-    <a class="btn-contato whats" href="https://wa.me/5511998585971" target="_blank" rel="noopener">
-      💬 Falar no WhatsApp
-    </a>
-    <a class="btn-contato insta" href="https://instagram.com/letsgobonecar" target="_blank" rel="noopener">
-      📷 @letsgobonecar
-    </a>
+    <a class="btn-contato whats" href="https://wa.me/5511998585971" target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+    <a class="btn-contato insta" href="https://instagram.com/letsgobonecar" target="_blank" rel="noopener">📷 @letsgobonecar</a>
   </div>
 </header>
 
@@ -327,9 +124,16 @@
   <button class="aba" data-status="vendida">💝 Já adotadas</button>
 </div>
 
+<div class="categorias-wrap">
+  <div class="categorias-label">Filtrar por categoria</div>
+  <div class="categorias" id="categorias"></div>
+</div>
+
 <div id="filtros">
   <input type="text" id="busca" placeholder="🔍 Buscar boneca..." oninput="filtrar()" />
 </div>
+
+<p class="resultado-count" id="count"></p>
 
 <div id="loading">Carregando as bonequinhas... 🎀</div>
 <div id="erro"></div>
@@ -346,12 +150,14 @@
   const WHATSAPP = "5511998585971";
   let todosProdutos = [];
   let abaAtual = "disponivel";
+  let catAtual  = "Todas";
 
   fetch('produtos.json')
     .then(r => { if(!r.ok) throw new Error('Erro ao abrir produtos.json'); return r.json(); })
     .then(dados => {
       todosProdutos = dados;
       document.getElementById('loading').style.display = 'none';
+      montarCategorias();
       renderizar();
     })
     .catch(err => {
@@ -360,6 +166,29 @@
       el.style.display = 'block';
       el.textContent = 'Erro: ' + err.message;
     });
+
+  function montarCategorias(){
+    const cats = ['Todas', ...new Set(todosProdutos.map(p => p.categoria).filter(Boolean).sort())];
+    const wrap = document.getElementById('categorias');
+    wrap.innerHTML = '';
+    cats.forEach(c => {
+      const btn = document.createElement('button');
+      btn.className = 'cat-btn' + (c === catAtual ? ' ativa' : '');
+      btn.textContent = emoji(c) + ' ' + c;
+      btn.addEventListener('click', () => {
+        catAtual = c;
+        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('ativa'));
+        btn.classList.add('ativa');
+        renderizar();
+      });
+      wrap.appendChild(btn);
+    });
+  }
+
+  function emoji(cat){
+    const map = { 'Todas':'🎀','Bonecas':'🧸','Vestidos':'👗','Pijamas':'😴','Tênis':'👟','Acessórios':'✨' };
+    return map[cat] || '🎀';
+  }
 
   document.querySelectorAll('.aba').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -371,7 +200,7 @@
   });
 
   function linkWpp(nome){
-    const msg = encodeURIComponent(`Olá! Vi a boneca "${nome}" no site e quero saber mais 🩷`);
+    const msg = encodeURIComponent(`Olá! Vi a ${nome} no site e quero saber mais 🩷`);
     return `https://wa.me/${WHATSAPP}?text=${msg}`;
   }
 
@@ -381,13 +210,22 @@
     const busca = document.getElementById('busca').value.toLowerCase();
     const lista = todosProdutos.filter(p =>
       p.status === abaAtual &&
+      (catAtual === 'Todas' || p.categoria === catAtual) &&
       ((p.nome||'').toLowerCase().includes(busca) || (p.descricao||'').toLowerCase().includes(busca))
     );
+
     const cat = document.getElementById('catalogo');
     const vazio = document.getElementById('vazio');
+    const count = document.getElementById('count');
     cat.innerHTML = '';
-    if(!lista.length){ vazio.style.display='block'; return; }
+
+    if(!lista.length){
+      vazio.style.display = 'block';
+      count.textContent = '';
+      return;
+    }
     vazio.style.display = 'none';
+    count.textContent = lista.length === 1 ? '1 produto encontrado' : `${lista.length} produtos encontrados`;
 
     lista.forEach(p => {
       const fotos = (p.fotos && p.fotos.length) ? p.fotos : ['sem-foto.jpg'];
@@ -408,6 +246,7 @@
       card.innerHTML = `
         <div class="foto-wrap">
           <span class="selo-status ${p.status==='vendida'?'adotada':''}">${p.status==='disponivel'?'Disponível':'Adotada 💝'}</span>
+          ${p.categoria ? `<span class="selo-cat">${esc(p.categoria)}</span>` : ''}
           <img src="${fotos[0]}" alt="${esc(p.nome)}" loading="lazy" onerror="this.src='sem-foto.jpg'">
         </div>
         ${thumbs}

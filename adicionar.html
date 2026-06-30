@@ -236,6 +236,15 @@
     <label for="descricao">Descrição</label>
     <textarea id="descricao" placeholder="ex: Cabelos cacheados, vestido xadrez rosa, laço no cabelo"></textarea>
 
+    <label for="categoria">Categoria</label>
+    <select id="categoria">
+      <option value="Bonecas">🧸 Bonecas</option>
+      <option value="Vestidos">👗 Vestidos</option>
+      <option value="Pijamas">😴 Pijamas</option>
+      <option value="Tênis">👟 Tênis</option>
+      <option value="Acessórios">✨ Acessórios</option>
+    </select>
+
     <label for="preco">Preço (R$)</label>
     <input type="text" id="preco" placeholder="ex: 180,00" />
 
@@ -314,12 +323,14 @@
       .map(f => `"${escapeJson(f)}"`)
       .join(', ');
 
+    const categoria = document.getElementById("categoria").value;
     const trecho =
 `{
   "id": "${escapeJson(id || '000')}",
   "nome": "${escapeJson(nome)}",
   "descricao": "${escapeJson(descricao)}",
   "preco": "${escapeJson(preco)}",
+  "categoria": "${escapeJson(categoria)}",
   "status": "${status}",
   "fotos": [${fotosFormatadas}]
 }`;

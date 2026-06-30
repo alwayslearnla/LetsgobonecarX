@@ -230,6 +230,17 @@
     btn.classList.add('active');
   }
 
+  function extrairFoto(fotoRaw) {
+    if (!fotoRaw) return '';
+    // Tenta extrair o ID do link do Drive (formatos: /file/d/ID ou id=ID)
+    const match = fotoRaw.match(/\/d\/([a-zA-Z0-9_-]+)/) || fotoRaw.match(/id=([a-zA-Z0-9_-]+)/);
+    if (match && match[1]) {
+      return `https://lh3.googleusercontent.com/d/${match[1]}`;
+    }
+    // Se não for link do Drive, retorna como está
+    return fotoRaw;
+  }
+
   function cardDisponivel(b) {
     return `
       <div class="card">
@@ -268,7 +279,7 @@
         status:    String(row.c[1]?.v ?? '').toLowerCase().trim(),
         preco:     row.c[2]?.v ?? '',
         descricao: row.c[3]?.v ?? '',
-        foto:      row.c[5]?.v ?? ''   // ← coluna F (link convertido)
+        foto:      extrairFoto(row.c[5]?.v ?? '')  // ← coluna F com proxy corrigido
       }));
 
       const disponiveis = bonecas.filter(b => b.status === 'disponivel');

@@ -5,7 +5,7 @@
     "descricao": "Cabelos cacheados, vestido xadrez rosa e branco, laço no cabelo",
     "preco": "180,00",
     "status": "disponivel",
-    "fotos": ["Bonecas/001-a.jpg", "Bonecas/001-b.jpg"]
+    "fotos": ["Lilas.jpg", "Bonecas/001-b.jpg"]
   },
   {
     "id": "002",
@@ -13,6 +13,6 @@
     "descricao": "Vestido florido azul, cabelos lisos com trança",
     "preco": "150,00",
     "status": "vendida",
-    "fotos": ["Bonecas/002-a.jpg"]
+    "fotos": ["Tenis.jpg"]
   }
 ]

@@ -1,18 +1,9 @@
 [
-  {
-    "id": "001",
-    "nome": "Boneca Cacheada Laço Rosa",
-    "descricao": "Cabelos cacheados, vestido xadrez rosa e branco, laço no cabelo",
-    "preco": "180,00",
-    "status": "disponivel",
-    "fotos": ["Lilas.jpg"]
-  },
-  {
-    "id": "002",
-    "nome": "Boneca Trança Florida",
-    "descricao": "Vestido florido azul, cabelos lisos com trança",
-    "preco": "150,00",
-    "status": "vendida",
-    "fotos": ["Tenis.jpg"]
-  }
+  {"id":"001","nome":"Boneca Azul","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Azul.jpeg"]},
+  {"id":"002","nome":"Boneca Embalada","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Embalada.jpeg"]},
+  {"id":"003","nome":"Boneca Lilas","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Lilas.jpeg"]},
+  {"id":"004","nome":"Tenis","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Tenis.jpeg"]},
+  {"id":"005","nome":"Boneca Vermelha","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Vermelha.jpeg"]},
+  {"id":"006","nome":"Vestido Azul Claro","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Vestido%20Azul%20claro.jpeg"]},
+  {"id":"007","nome":"Vestido Florido","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Vestido%20florido.jpeg"]}
 ]

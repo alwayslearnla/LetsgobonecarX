@@ -5,7 +5,7 @@
     "descricao": "Cabelos cacheados, vestido xadrez rosa e branco, laço no cabelo",
     "preco": "180,00",
     "status": "disponivel",
-    "fotos": ["Azul.jpg", "fotos/001-b.jpg"]
+    "fotos": ["Bonecas/001-a.jpg", "Bonecas/001-b.jpg"]
   },
   {
     "id": "002",
@@ -13,46 +13,6 @@
     "descricao": "Vestido florido azul, cabelos lisos com trança",
     "preco": "150,00",
     "status": "vendida",
-    "fotos": ["Vermelha.jpg"]
-  },
-  {
-  "id": "002",
-  "nome": "Boneca Trança Florida",
-  "descricao": "Vestido florido azul, cabelos lisos com trança",
-  "preco": "150,00",
-  "status": "vendida",
-  "fotos": ["Lilas.jpg"]
-  },
-  {
-  "id": "002",
-  "nome": "Boneca Trança Florida",
-  "descricao": "Vestido florido azul, cabelos lisos com trança",
-  "preco": "150,00",
-  "status": "vendida",
-  "fotos": ["Vestido florido.jpg"]
-  },
-  {
-  "id": "002",
-  "nome": "Boneca Trança Florida",
-  "descricao": "Vestido florido azul, cabelos lisos com trança",
-  "preco": "150,00",
-  "status": "vendida",
-  "fotos": ["Vestido Azul claro.jpg"]
-  },
-  {
-  "id": "002",
-  "nome": "Boneca Trança Florida",
-  "descricao": "Vestido florido azul, cabelos lisos com trança",
-  "preco": "150,00",
-  "status": "vendida",
-  "fotos": ["Embalada.jpg"]
-  },
-  {
-  "id": "002",
-  "nome": "Boneca Trança Florida",
-  "descricao": "Vestido florido azul, cabelos lisos com trança",
-  "preco": "150,00",
-  "status": "vendida",
-  "fotos": ["Tenis.jpg"]
+    "fotos": ["Bonecas/002-a.jpg"]
   }
 ]

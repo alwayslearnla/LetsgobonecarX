@@ -311,7 +311,7 @@
   <p class="sub">Cada boneca é costurada à mão, uma a uma — tecidos, roupinhas e detalhes escolhidos com carinho. Veja quem ainda está esperando por uma família e quem já encontrou a sua.</p>
 
   <div class="contatos">
-    <a class="botao-contato whats" href="https://wa.me/5511998585971" target="_blank" rel="noopener">
+    <a class="botao-contato whats" href="https://wa.me/55SEUNUMEROAQUI" target="_blank" rel="noopener">
       Falar no WhatsApp
     </a>
     <a class="botao-contato insta" href="https://instagram.com/SEUUSUARIOAQUI" target="_blank" rel="noopener">
@@ -336,10 +336,11 @@
 
 <footer>
   Ateliê de Bonecas de Pano · feito com carinho, peça a peça.
+  <br><a href="adicionar.html" style="color:var(--tinta-suave); text-decoration:underline;">+ adicionar boneca nova</a>
 </footer>
 
 <script>
-  const NUMERO_WHATSAPP = "5511998585971"; // <-- troque pelo número real, ex: 5511999998888
+  const NUMERO_WHATSAPP = "55SEUNUMEROAQUI"; // <-- troque pelo número real, ex: 5511999998888
 
   let todosProdutos = [];
   let abaAtual = "disponivel";
@@ -402,7 +403,7 @@
     vazio.style.display = 'none';
 
     lista.forEach(p => {
-      const fotos = (p.fotos && p.fotos.length) ? p.fotos : ['fotos/sem-foto.jpg'];
+      const fotos = (p.fotos && p.fotos.length) ? p.fotos : ['Bonecas/sem-foto.jpg'];
       const card = document.createElement('div');
       card.className = 'card';
 
@@ -423,7 +424,7 @@
             ${p.status === 'disponivel' ? 'Disponível' : 'Adotada'}
           </span>
           <img src="${fotos[0]}" alt="${escapeHtml(p.nome)}" loading="lazy"
-               onerror="this.src='fotos/sem-foto.jpg'">
+               onerror="this.src='Bonecas/sem-foto.jpg'">
         </div>
         ${miniaturasHtml}
         <div class="card-info">

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Adicionar boneca — Ateliê</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --linho:      #FAF5EE;
+    --linho-card: #FFFFFF;
+    --rosa-seco:  #C2767A;
+    --rosa-claro: #EAD3D2;
+    --verde-la:   #6E7F63;
+    --tinta:      #3B332C;
+    --tinta-suave:#8C8073;
+    --linha:      #DCCFC0;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    background:var(--linho);
+    color:var(--tinta);
+    font-family:'Jost', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding:24px 16px 80px;
+  }
+  h1,h2,.serif{ font-family:'Fraunces', serif; }
+
+  .voltar{
+    display:inline-block;
+    font-size:13.5px;
+    color:var(--tinta-suave);
+    text-decoration:none;
+    margin-bottom:18px;
+  }
+  .voltar:hover{ color:var(--rosa-seco); }
+
+  .container{ max-width:640px; margin:0 auto; }
+
+  header{ text-align:center; margin-bottom:32px; }
+  .selo{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--rosa-seco); font-weight:600; margin-bottom:14px;
+  }
+  .selo::before,.selo::after{ content:""; width:20px; height:1px; background:var(--rosa-seco); }
+  header h1{ font-size:clamp(1.6rem,5vw,2.2rem); font-weight:600; margin-bottom:8px; }
+  header p{ color:var(--tinta-suave); font-size:14.5px; }
+
+  .passo{
+    background:var(--linho-card);
+    border:1px dashed var(--linha);
+    border-radius:6px;
+    padding:24px;
+    margin-bottom:20px;
+  }
+  .passo .num{
+    display:inline-flex;
+    align-items:center; justify-content:center;
+    width:26px; height:26px;
+    border-radius:50%;
+    background:var(--tinta);
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
+    margin-right:10px;
+    flex-shrink:0;
+  }
+  .passo h2{
+    font-size:16.5px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    margin-bottom:14px;
+  }
+  .passo p.ajuda{
+    font-size:13.5px;
+    color:var(--tinta-suave);
+    margin:6px 0 14px 36px;
+    line-height:1.5;
+  }
+
+  label{
+    display:block;
+    font-size:13.5px;
+    font-weight:500;
+    margin:14px 0 6px;
+  }
+  label:first-of-type{ margin-top:0; }
+
+  input[type=text], textarea, select{
+    width:100%;
+    padding:11px 14px;
+    border:1px solid var(--linha);
+    border-radius:8px;
+    font-family:'Jost',sans-serif;
+    font-size:14.5px;
+    color:var(--tinta);
+    background:#fff;
+  }
+  input[type=text]:focus, textarea:focus, select:focus{
+    outline:2px solid var(--rosa-seco);
+    outline-offset:1px;
+  }
+  textarea{ resize:vertical; min-height:70px; }
+
+  .linha-fotos{
+    display:flex;
+    gap:8px;
+    margin-bottom:8px;
+  }
+  .linha-fotos input{ flex:1; }
+  .linha-fotos button{
+    flex-shrink:0;
+    background:#fff;
+    border:1px solid var(--linha);
+    border-radius:8px;
+    width:42px;
+    cursor:pointer;
+    color:var(--rosa-seco);
+    font-size:18px;
+  }
+  #add-foto{
+    margin-top:4px;
+    background:none;
+    border:none;
+    color:var(--rosa-seco);
+    font-size:13.5px;
+    cursor:pointer;
+    text-decoration:underline;
+  }
+
+  .radio-status{
+    display:flex;
+    gap:10px;
+  }
+  .radio-status label{
+    flex:1;
+    margin:0;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid var(--linha);
+    border-radius:8px;
+    padding:11px 14px;
+    cursor:pointer;
+    font-weight:400;
+    font-size:14px;
+  }
+  .radio-status input{ width:auto; }
+
+  .gerar-btn{
+    width:100%;
+    background:var(--rosa-seco);
+    color:#fff;
+    border:none;
+    padding:14px;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+    margin-top:6px;
+    font-family:'Jost',sans-serif;
+  }
+  .gerar-btn:hover{ background:#a85f63; }
+
+  #resultado{ display:none; }
+
+  pre{
+    background:var(--tinta);
+    color:#f3ece5;
+    padding:18px;
+    border-radius:8px;
+    font-size:13px;
+    overflow-x:auto;
+    white-space:pre-wrap;
+    word-break:break-word;
+    line-height:1.6;
+  }
+  .copiar-btn{
+    margin-top:12px;
+    width:100%;
+    background:var(--verde-la);
+    color:#fff;
+    border:none;
+    padding:13px;
+    border-radius:30px;
+    font-size:14.5px;
+    font-weight:500;
+    cursor:pointer;
+  }
+  .copiar-btn.copiado{ background:var(--tinta); }
+
+  .erro-aviso{
+    color:#a4453a;
+    font-size:13px;
+    margin-top:8px;
+    display:none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <a class="voltar" href="index.html">&larr; Voltar para o catálogo</a>
+
+  <header>
+    <div class="selo">Ferramenta interna</div>
+    <h1>Adicionar boneca nova</h1>
+    <p>Preencha os dados abaixo e gere o trecho prontinho para colar no <code>produtos.json</code>.</p>
+  </header>
+
+  <div class="passo">
+    <h2><span class="num">1</span> Suba as fotos primeiro</h2>
+    <p class="ajuda">
+      No GitHub, abra a pasta <strong>fotos</strong> → <strong>Add file → Upload files</strong> →
+      arraste as fotos da boneca → <strong>Commit changes</strong>.
+      Dê nomes simples, sem espaço ou acento (ex: <code>003-a.jpg</code>).
+      Depois volte aqui e preencha os campos abaixo.
+    </p>
+  </div>
+
+  <div class="passo">
+    <h2><span class="num">2</span> Preencha os dados da boneca</h2>
+
+    <label for="id">Número/código (id)</label>
+    <input type="text" id="id" placeholder="ex: 003" />
+
+    <label for="nome">Nome da boneca</label>
+    <input type="text" id="nome" placeholder="ex: Boneca Cacheada Laço Rosa" />
+
+    <label for="descricao">Descrição</label>
+    <textarea id="descricao" placeholder="ex: Cabelos cacheados, vestido xadrez rosa, laço no cabelo"></textarea>
+
+    <label for="preco">Preço (R$)</label>
+    <input type="text" id="preco" placeholder="ex: 180,00" />
+
+    <label>Status</label>
+    <div class="radio-status">
+      <label><input type="radio" name="status" value="disponivel" checked /> Disponível para venda</label>
+      <label><input type="radio" name="status" value="vendida" /> Já adotada (vendida)</label>
+    </div>
+
+    <label>Nomes dos arquivos de foto (na ordem que subiu no GitHub)</label>
+    <div id="lista-fotos">
+      <div class="linha-fotos">
+        <input type="text" placeholder="ex: 003-a.jpg" />
+        <button type="button" onclick="removerFoto(this)" title="remover">×</button>
+      </div>
+    </div>
+    <button type="button" id="add-foto" onclick="adicionarFoto()">+ adicionar outra foto</button>
+
+    <button class="gerar-btn" onclick="gerar()">Gerar trecho para colar</button>
+    <p class="erro-aviso" id="erro-aviso">Preencha pelo menos o nome e uma foto antes de gerar.</p>
+  </div>
+
+  <div class="passo" id="resultado">
+    <h2><span class="num">3</span> Copie e cole no produtos.json</h2>
+    <p class="ajuda">
+      Abra o <code>produtos.json</code> no GitHub (ícone de lápis), clique logo depois do
+      <code>}</code> do último bloco, digite uma vírgula, cole o trecho abaixo, e clique em
+      <strong>Commit changes</strong>.
+    </p>
+    <pre id="saida"></pre>
+    <button class="copiar-btn" id="btn-copiar" onclick="copiar()">Copiar trecho</button>
+  </div>
+
+</div>
+
+<script>
+  function adicionarFoto(){
+    const div = document.createElement('div');
+    div.className = 'linha-fotos';
+    div.innerHTML = `<input type="text" placeholder="ex: 003-b.jpg" />
+      <button type="button" onclick="removerFoto(this)" title="remover">×</button>`;
+    document.getElementById('lista-fotos').appendChild(div);
+  }
+
+  function removerFoto(btn){
+    const lista = document.getElementById('lista-fotos');
+    if(lista.children.length > 1){
+      btn.parentElement.remove();
+    }
+  }
+
+  function escapeJson(str){
+    return (str || '').replace(/\\/g,'\\\\').replace(/"/g,'\\"');
+  }
+
+  function gerar(){
+    const id = document.getElementById('id').value.trim();
+    const nome = document.getElementById('nome').value.trim();
+    const descricao = document.getElementById('descricao').value.trim();
+    const preco = document.getElementById('preco').value.trim();
+    const status = document.querySelector('input[name=status]:checked').value;
+
+    const fotosInputs = [...document.querySelectorAll('#lista-fotos input')]
+      .map(i => i.value.trim())
+      .filter(Boolean);
+
+    const erroEl = document.getElementById('erro-aviso');
+    if(!nome || fotosInputs.length === 0){
+      erroEl.style.display = 'block';
+      return;
+    }
+    erroEl.style.display = 'none';
+
+    const fotosFormatadas = fotosInputs
+      .map(f => f.includes('/') ? f : `Bonecas/${f}`)
+      .map(f => `"${escapeJson(f)}"`)
+      .join(', ');
+
+    const trecho =
+`{
+  "id": "${escapeJson(id || '000')}",
+  "nome": "${escapeJson(nome)}",
+  "descricao": "${escapeJson(descricao)}",
+  "preco": "${escapeJson(preco)}",
+  "status": "${status}",
+  "fotos": [${fotosFormatadas}]
+}`;
+
+    document.getElementById('saida').textContent = trecho;
+    document.getElementById('resultado').style.display = 'block';
+    document.getElementById('btn-copiar').classList.remove('copiado');
+    document.getElementById('btn-copiar').textContent = 'Copiar trecho';
+    document.getElementById('resultado').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function copiar(){
+    const texto = document.getElementById('saida').textContent;
+    navigator.clipboard.writeText(texto).then(() => {
+      const btn = document.getElementById('btn-copiar');
+      btn.textContent = 'Copiado! ✓';
+      btn.classList.add('copiado');
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -3,304 +3,195 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Let's Go Bonecar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <title>Catálogo</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+    h1 { text-align: center; margin-bottom: 20px; color: #333; }
 
-    body {
-      font-family: 'Nunito', sans-serif;
-      background-color: #fff0f6;
-      color: #4a4a4a;
-    }
-
-    header {
-      background-color: #ff3daa;
-      color: white;
-      text-align: center;
-      padding: 30px 20px 20px;
-    }
-
-    header .heart { font-size: 2.5rem; }
-
-    header h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.2rem;
-      margin: 8px 0 4px;
-    }
-
-    header .sub {
-      font-size: 0.85rem;
-      opacity: 0.9;
-      margin-bottom: 12px;
-    }
-
-    header .contatos {
+    #filtros {
       display: flex;
-      justify-content: center;
-      gap: 20px;
       flex-wrap: wrap;
-      font-size: 0.9rem;
-    }
-
-    header .contatos a {
-      color: white;
-      text-decoration: none;
-      background: rgba(255,255,255,0.2);
-      padding: 6px 14px;
-      border-radius: 20px;
-      transition: background 0.2s;
-    }
-
-    header .contatos a:hover { background: rgba(255,255,255,0.35); }
-
-    .tabs {
-      display: flex;
-      justify-content: center;
       gap: 10px;
-      padding: 24px 20px 0;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    #filtros input, #filtros select {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
     }
 
-    .tab-btn {
-      background: white;
-      border: 2px solid #ff3daa;
-      color: #ff3daa;
-      padding: 10px 28px;
-      border-radius: 30px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .tab-btn.active, .tab-btn:hover {
-      background: #ff3daa;
-      color: white;
-    }
-
-    .grid-section {
-      display: none;
-      padding: 24px 20px 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .grid-section.active { display: block; }
-
-    .grid {
+    #catalogo {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: white;
-      border-radius: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(255, 61, 170, 0.12);
       transition: transform 0.2s;
     }
-
     .card:hover { transform: translateY(-4px); }
 
     .card img {
       width: 100%;
-      height: 260px;
+      height: 220px;
       object-fit: cover;
-    }
-
-    .card-body { padding: 16px; }
-
-    .card-id {
-      font-size: 0.75rem;
-      color: #ff3daa;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .card-desc {
-      font-size: 0.9rem;
-      margin: 6px 0 10px;
-      color: #666;
-      line-height: 1.4;
-    }
-
-    .card-price {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #ff3daa;
-      margin-bottom: 12px;
-    }
-
-    .btn-adotar {
       display: block;
-      width: 100%;
-      background: #ff3daa;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      padding: 10px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      transition: background 0.2s;
+      background: #eee;
     }
 
-    .btn-adotar:hover { background: #e0008f; }
-
-    .card.adotada { opacity: 0.75; }
-    .card.adotada img { filter: grayscale(30%); }
-
-    .badge-adotada {
-      display: inline-block;
-      background: #ccc;
-      color: white;
-      border-radius: 20px;
-      padding: 8px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      width: 100%;
-      text-align: center;
+    .card-info {
+      padding: 12px;
+    }
+    .card-info h3 { font-size: 15px; color: #222; margin-bottom: 6px; }
+    .card-info p  { font-size: 13px; color: #666; margin-bottom: 4px; }
+    .card-info .preco {
+      font-size: 16px;
+      font-weight: bold;
+      color: #e44d26;
+      margin-top: 6px;
     }
 
-    .msg {
-      text-align: center;
-      color: #aaa;
-      padding: 40px;
-      font-size: 1rem;
-    }
-
-    footer {
-      background: #ff3daa;
-      color: white;
-      text-align: center;
-      padding: 18px;
-      font-size: 0.85rem;
-    }
+    #loading { text-align: center; font-size: 16px; color: #999; margin: 40px 0; }
+    #erro    { text-align: center; color: red; margin: 20px; }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="heart">🤍</div>
-  <h1>Let's Go Bonecar</h1>
-  <p class="sub">Bonecas de Pano · Jundiaí/SP · Brasil</p>
-  <div class="contatos">
-    <a href="https://wa.me/5511998585971" target="_blank">📱 (11) 99858-5971</a>
-    <a href="https://instagram.com/letsgobonecar" target="_blank">📸 @letsgobonecar</a>
-  </div>
-</header>
+<h1>📦 Catálogo de Produtos</h1>
 
-<div class="tabs">
-  <button class="tab-btn active" onclick="mostrarAba('disponiveis', this)">💕 Disponíveis</button>
-  <button class="tab-btn" onclick="mostrarAba('adotadas', this)">🏠 Já Adotadas</button>
+<div id="filtros">
+  <input type="text" id="busca" placeholder="🔍 Buscar produto..." oninput="filtrar()" />
+  <select id="categoria" onchange="filtrar()">
+    <option value="">Todas as categorias</option>
+  </select>
 </div>
 
-<section id="disponiveis" class="grid-section active">
-  <div class="grid" id="grid-disponiveis">
-    <p class="msg">Carregando bonequinhas... 🎀</p>
-  </div>
-</section>
-
-<section id="adotadas" class="grid-section">
-  <div class="grid" id="grid-adotadas">
-    <p class="msg">Carregando galeria... 🎀</p>
-  </div>
-</section>
-
-<footer>
-  Feito com 💕 · Let's Go Bonecar · Jundiaí/SP
-</footer>
+<div id="loading">Carregando produtos...</div>
+<div id="erro" style="display:none;"></div>
+<div id="catalogo"></div>
 
 <script>
   const SHEET_ID = '1tNdlvCXUratik2sDl4wPPpJnQPWEXTCaFuhK-3RxnGA';
-  const WPP = '5511998585971';
+  const URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
 
-  const GVIZ_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
+  let todosProdutos = [];
 
-  function mostrarAba(id, btn) {
-    document.querySelectorAll('.grid-section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    btn.classList.add('active');
+  function extrairIdDrive(link) {
+    if (!link) return null;
+    // Formato: /file/d/ID/view
+    let match = link.match(/\/d\/([a-zA-Z0-9_-]+)/);
+    if (match) return match[1];
+    // Formato: ?id=ID ou &id=ID
+    match = link.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+    if (match) return match[1];
+    return null;
   }
 
-  function extrairFoto(fotoRaw) {
-    if (!fotoRaw) return '';
-    // Tenta extrair o ID do link do Drive (formatos: /file/d/ID ou id=ID)
-    const match = fotoRaw.match(/\/d\/([a-zA-Z0-9_-]+)/) || fotoRaw.match(/id=([a-zA-Z0-9_-]+)/);
-    if (match && match[1]) {
-      return `https://lh3.googleusercontent.com/d/${match[1]}`;
+  function extrairFoto(colunaE, colunaF) {
+    // Tenta coluna F primeiro, depois coluna E
+    const id = extrairIdDrive(colunaF) || extrairIdDrive(colunaE);
+    if (id) {
+      return `https://drive.google.com/thumbnail?id=${id}&sz=w400`;
     }
-    // Se não for link do Drive, retorna como está
-    return fotoRaw;
+    return 'https://via.placeholder.com/400x220?text=Sem+Foto';
   }
 
-  function cardDisponivel(b) {
-    return `
-      <div class="card">
-        <img src="${b.foto}" alt="Boneca ${b.id}" onerror="this.src='https://placehold.co/400x300/ffb6d9/fff?text=🎀'"/>
-        <div class="card-body">
-          <div class="card-id">Boneca #${b.id}</div>
-          <p class="card-desc">${b.descricao}</p>
-          <div class="card-price">${b.preco}</div>
-          <a class="btn-adotar"
-             href="https://wa.me/${WPP}?text=Olá!%20Tenho%20interesse%20na%20Boneca%20%23${b.id}%20😍"
-             target="_blank">Quero adotar! 💕</a>
-        </div>
-      </div>`;
+  function formatarPreco(valor) {
+    if (!valor && valor !== 0) return 'Sob consulta';
+    return 'R$ ' + parseFloat(valor).toFixed(2).replace('.', ',');
   }
 
-  function cardAdotada(b) {
-    return `
-      <div class="card adotada">
-        <img src="${b.foto}" alt="Boneca ${b.id}" onerror="this.src='https://placehold.co/400x300/ddd/fff?text=🎀'"/>
-        <div class="card-body">
-          <div class="card-id">Boneca #${b.id}</div>
-          <p class="card-desc">${b.descricao}</p>
-          <span class="badge-adotada">🏠 Já adotada com muito amor!</span>
-        </div>
-      </div>`;
-  }
-
-  fetch(GVIZ_URL)
+  fetch(URL)
     .then(r => r.text())
     .then(text => {
-      const json = JSON.parse(text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\)/)[1]);
-      const rows = json.table.rows;
+      const json = JSON.parse(text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*?)\);/)[1]);
+      const rows  = json.table.rows;
+      const cols  = json.table.cols;
 
-      const bonecas = rows.map(row => ({
-        id:        row.c[0]?.v ?? '',
-        status:    String(row.c[1]?.v ?? '').toLowerCase().trim(),
-        preco:     row.c[2]?.v ?? '',
-        descricao: row.c[3]?.v ?? '',
-        foto:      extrairFoto(row.c[5]?.v ?? '')  // ← coluna F com proxy corrigido
-      }));
+      // Detecta índices pelas colunas (A=0, B=1, C=2, D=3, E=4, F=5...)
+      // Ajuste os índices abaixo conforme seu cabeçalho real
+      const IDX = {
+        nome:      0, // coluna A
+        descricao: 1, // coluna B
+        categoria: 2, // coluna C
+        preco:     3, // coluna D
+        fotoE:     4, // coluna E — link /file/d/ID/view
+        fotoF:     5, // coluna F — link uc?export=view&id=ID
+      };
 
-      const disponiveis = bonecas.filter(b => b.status === 'disponivel');
-      const adotadas    = bonecas.filter(b => b.status === 'adotada');
+      todosProdutos = rows
+        .filter(r => r.c[IDX.nome] && r.c[IDX.nome].v)
+        .map(r => ({
+          nome:      r.c[IDX.nome]?.v      || '',
+          descricao: r.c[IDX.descricao]?.v || '',
+          categoria: r.c[IDX.categoria]?.v || '',
+          preco:     r.c[IDX.preco]?.v,
+          foto:      extrairFoto(r.c[IDX.fotoE]?.v, r.c[IDX.fotoF]?.v),
+        }));
 
-      document.getElementById('grid-disponiveis').innerHTML =
-        disponiveis.length
-          ? disponiveis.map(cardDisponivel).join('')
-          : '<p class="msg">Nenhuma bonequinha disponível no momento. Em breve novidades! 🎀</p>';
+      // Popula filtro de categorias
+      const categorias = [...new Set(todosProdutos.map(p => p.categoria).filter(Boolean))].sort();
+      const sel = document.getElementById('categoria');
+      categorias.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat;
+        opt.textContent = cat;
+        sel.appendChild(opt);
+      });
 
-      document.getElementById('grid-adotadas').innerHTML =
-        adotadas.length
-          ? adotadas.map(cardAdotada).join('')
-          : '<p class="msg">Galeria vazia por enquanto. 🎀</p>';
+      document.getElementById('loading').style.display = 'none';
+      renderizar(todosProdutos);
     })
-    .catch(() => {
-      document.getElementById('grid-disponiveis').innerHTML =
-        '<p class="msg">Erro ao carregar. Verifique se a planilha está publicada. 🎀</p>';
-      document.getElementById('grid-adotadas').innerHTML =
-        '<p class="msg">Erro ao carregar. 🎀</p>';
+    .catch(err => {
+      document.getElementById('loading').style.display = 'none';
+      const erroEl = document.getElementById('erro');
+      erroEl.style.display = 'block';
+      erroEl.textContent = 'Erro ao carregar dados: ' + err.message;
     });
+
+  function renderizar(lista) {
+    const catalogo = document.getElementById('catalogo');
+    catalogo.innerHTML = '';
+
+    if (lista.length === 0) {
+      catalogo.innerHTML = '<p style="text-align:center;color:#999;grid-column:1/-1">Nenhum produto encontrado.</p>';
+      return;
+    }
+
+    lista.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${p.foto}" alt="${p.nome}" loading="lazy"
+             onerror="this.src='https://via.placeholder.com/400x220?text=Sem+Foto'" />
+        <div class="card-info">
+          <h3>${p.nome}</h3>
+          ${p.categoria ? `<p>📁 ${p.categoria}</p>` : ''}
+          ${p.descricao ? `<p>${p.descricao}</p>` : ''}
+          <div class="preco">${formatarPreco(p.preco)}</div>
+        </div>
+      `;
+      catalogo.appendChild(card);
+    });
+  }
+
+  function filtrar() {
+    const busca     = document.getElementById('busca').value.toLowerCase();
+    const categoria = document.getElementById('categoria').value;
+    const resultado = todosProdutos.filter(p => {
+      const matchBusca = p.nome.toLowerCase().includes(busca) || p.descricao.toLowerCase().includes(busca);
+      const matchCat   = !categoria || p.categoria === categoria;
+      return matchBusca && matchCat;
+    });
+    renderizar(resultado);
+  }
 </script>
 
 </body>

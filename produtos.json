@@ -1,9 +1,58 @@
 [
-  {"id":"001","nome":"Boneca Azul","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Azul.jpeg"]},
-  {"id":"002","nome":"Boneca Embalada","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Embalada.jpeg"]},
-  {"id":"003","nome":"Boneca Lilas","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Lilas.jpeg"]},
-  {"id":"004","nome":"Tenis","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Tenis.jpeg"]},
-  {"id":"005","nome":"Boneca Vermelha","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Vermelha.jpeg"]},
-  {"id":"006","nome":"Vestido Azul Claro","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Vestido%20Azul%20claro.jpeg"]},
-  {"id":"007","nome":"Vestido Florido","descricao":"","preco":"","status":"disponivel","fotos":["Bonecas/Vestido%20florido.jpeg"]}
+  {
+    "id": "001",
+    "nome": "Boneca Azul",
+    "descricao": "Vestido azul com detalhes em branco, cabelos ruivos cacheados com laço",
+    "preco": "",
+    "status": "disponivel",
+    "fotos": ["Bonecas/Azul.jpeg"]
+  },
+  {
+    "id": "002",
+    "nome": "Boneca Vermelha",
+    "descricao": "Vestido vermelho com saia rodada, cabelos ruivos cacheados com laço",
+    "preco": "",
+    "status": "disponivel",
+    "fotos": ["Bonecas/Vermelha.jpeg"]
+  },
+  {
+    "id": "003",
+    "nome": "Boneca Lilas",
+    "descricao": "Vestido lilás delicado, cabelos ruivos cacheados com laço",
+    "preco": "",
+    "status": "disponivel",
+    "fotos": ["Bonecas/Lilas.jpeg"]
+  },
+  {
+    "id": "004",
+    "nome": "Boneca Vestido Florido",
+    "descricao": "Vestido floral branco com flores coloridas, asas de anjinho",
+    "preco": "",
+    "status": "disponivel",
+    "fotos": ["Bonecas/Vestido_florido.jpeg"]
+  },
+  {
+    "id": "005",
+    "nome": "Boneca Vestido Azul Claro",
+    "descricao": "Vestido azul claro com detalhes em rosa, asas de anjinho",
+    "preco": "",
+    "status": "disponivel",
+    "fotos": ["Bonecas/Vestido_Azul_claro.jpeg"]
+  },
+  {
+    "id": "006",
+    "nome": "Boneca Embalada",
+    "descricao": "Boneca artesanal embalada para presente, pronta para entregar",
+    "preco": "",
+    "status": "disponivel",
+    "fotos": ["Bonecas/Embalada.jpeg"]
+  },
+  {
+    "id": "007",
+    "nome": "Sapato Tenis",
+    "descricao": "Sapatinho de tenis artesanal feito à mão, acompanha boneca",
+    "preco": "",
+    "status": "disponivel",
+    "fotos": ["Bonecas/Tenis.jpeg"]
+  }
 ]

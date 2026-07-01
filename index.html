@@ -73,7 +73,7 @@
   .miniaturas img.ativa{ opacity:1; border-color:var(--pink); }
 
   .selo-status{ position:absolute; top:12px; left:12px; font-size:11.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:5px 13px; border-radius:30px; background:var(--pink); color:#fff; font-family:'Nunito',sans-serif; }
-  .selo-status.adotada{ background:rgba(255,255,255,.9); color:var(--pink); border:1px solid var(--pink); }
+  .selo-status.adotada{ background:rgba(255,255,255,.82); color:var(--text-soft); border:1px solid var(--border); font-size:9px; padding:3px 9px; }
 
   .selo-cat{ position:absolute; top:12px; right:12px; font-size:11px; font-weight:700; padding:4px 10px; border-radius:30px; background:rgba(255,255,255,.88); color:var(--pink-dark); border:1px solid var(--border); }
 
@@ -85,7 +85,7 @@
   .preco{ font-size:19px; font-weight:700; color:var(--pink); }
   .btn-quero{ background:var(--pink); color:#fff; border:none; padding:9px 18px; border-radius:30px; font-size:13.5px; font-weight:700; cursor:pointer; text-decoration:none; font-family:'Nunito',sans-serif; white-space:nowrap; transition:background .15s; }
   .btn-quero:hover{ background:var(--pink-dark); }
-  .frase-adotada{ font-size:13.5px; color:var(--pink); font-style:italic; font-weight:600; }
+  .frase-adotada{ font-size:17px; color:var(--pink); font-style:italic; font-weight:700; display:block; text-align:center; padding:4px 0; }
 
   #loading,#vazio{ text-align:center; color:var(--text-soft); margin:60px 0; font-size:17px; font-weight:600; }
   #erro{ text-align:center; color:#c0392b; margin:24px; display:none; }
@@ -245,7 +245,7 @@
 
       card.innerHTML = `
         <div class="foto-wrap">
-          <span class="selo-status ${p.status==='vendida'?'adotada':''}">${p.status==='disponivel'?'Disponível':'Esgotada'}</span>
+          <span class="selo-status ${p.status==='vendida'?'adotada':''}">${p.status==='disponivel'?'Disponível':'Vendida'}</span>
           ${p.categoria ? `<span class="selo-cat">${esc(p.categoria)}</span>` : ''}
           <img src="${fotos[0]}" alt="${esc(p.nome)}" loading="lazy" onerror="this.src='sem-foto.jpg'">
         </div>

@@ -4,6 +4,6 @@
   {"id":"003","nome":"Boneca Lilás","descricao":"Vestido lilás delicado, cabelos ruivos cacheados com laço","preco":"","status":"disponivel","categoria":"Bonecas","fotos":["Bonecas/Lilas.jpeg"]},
   {"id":"004","nome":"Vestido Florido","descricao":"Vestido floral branco com flores coloridas, acompanha asas de anjinho","preco":"","status":"disponivel","categoria":"Vestidos","fotos":["Bonecas/Vestido_florido.jpeg"]},
   {"id":"005","nome":"Vestido Azul Claro","descricao":"Vestido azul claro com detalhes em rosa, acompanha asas de anjinho","preco":"","status":"disponivel","categoria":"Vestidos","fotos":["Bonecas/Vestido_Azul_claro.jpeg"]},
-  {"id":"006","nome":"Boneca Embalada","descricao":"Boneca artesanal embalada para presente, pronta para entregar","preco":"","status":"disponivel","categoria":"Bonecas","fotos":["Bonecas/Embalada.jpeg"]},
+  {"id":"006","nome":"Boneca Embalada","descricao":"Boneca artesanal embalada para presente, pronta para entregar","preco":"","status":"vendida","categoria":"Bonecas","fotos":["Bonecas/Embalada.jpeg"]},
   {"id":"007","nome":"Tênis Artesanal","descricao":"Sapatinho de tênis feito à mão, acompanha boneca","preco":"","status":"disponivel","categoria":"Tênis","fotos":["Bonecas/Tenis.jpeg"]}
 ]

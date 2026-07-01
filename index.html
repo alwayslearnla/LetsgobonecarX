@@ -121,7 +121,7 @@
 
 <div class="abas">
   <button class="aba ativa" data-status="disponivel">🛍️ Disponíveis</button>
-  <button class="aba" data-status="vendida">💝 Já adotadas</button>
+  <button class="aba" data-status="vendida">💝 Momentos que já começaram</button>
 </div>
 
 <div class="categorias-wrap">
@@ -241,11 +241,11 @@
              <span class="preco">${p.preco ? 'R$ '+esc(p.preco) : 'Consultar'}</span>
              <a class="btn-quero" href="${linkWpp(p.nome)}" target="_blank" rel="noopener">Quero esta! 💕</a>
            </div>`
-        : `<span class="frase-adotada">já encontrou sua família 💝</span>`;
+        : `<span class="frase-adotada">Em um novo lar 🏠</span>`;
 
       card.innerHTML = `
         <div class="foto-wrap">
-          <span class="selo-status ${p.status==='vendida'?'adotada':''}">${p.status==='disponivel'?'Disponível':'Adotada 💝'}</span>
+          <span class="selo-status ${p.status==='vendida'?'adotada':''}">${p.status==='disponivel'?'Disponível':'Esgotada'}</span>
           ${p.categoria ? `<span class="selo-cat">${esc(p.categoria)}</span>` : ''}
           <img src="${fotos[0]}" alt="${esc(p.nome)}" loading="lazy" onerror="this.src='sem-foto.jpg'">
         </div>

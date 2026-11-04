@@ -137,6 +137,7 @@
   footer .dados{ color:var(--marrom); font-weight:600; font-size:15px; display:flex; flex-wrap:wrap; justify-content:center; gap:6px 18px; }
   footer .dados span{ white-space:nowrap; }
   footer .interno{ color:var(--marrom-suave); font-size:13.5px; }
+  footer .direitos{ color:var(--marrom-suave); font-size:13px; line-height:1.5; max-width:60ch; }
 
   @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
   @media (max-width:520px){
@@ -247,6 +248,7 @@
       <span>WhatsApp (11) 99858-5971</span>
       <span>Instagram @letsgobonecar</span>
     </div>
+    <p class="direitos">© <span id="ano">2026</span> Let's Go Bonecar. Todos os direitos reservados. As fotos, criações e textos deste site não podem ser copiados ou usados sem autorização.</p>
     <a class="interno" href="adicionar.html">+ adicionar boneca nova</a>
   </div>
 </footer>
@@ -256,6 +258,7 @@
   let todosProdutos = [];
   let abaAtual = "disponivel";
   let catAtual = "Todas";
+  document.getElementById('ano').textContent = new Date().getFullYear();
 
   fetch('produtos.json')
     .then(r => { if(!r.ok) throw new Error('não foi possível abrir o produtos.json'); return r.json(); })

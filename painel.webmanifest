@@ -1,0 +1,19 @@
+{
+  "id": "./painel.html",
+  "name": "Painel Let's Go Bonecar",
+  "short_name": "Let's Go Bonecar",
+  "description": "Painel da loja Let's Go Bonecar: cadastrar, editar e vender peças.",
+  "lang": "pt-BR",
+  "start_url": "./painel.html",
+  "scope": "./painel.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#E8348A",
+  "icons": [
+    { "src": "app/icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "app/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "app/icone-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "app/icone-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
